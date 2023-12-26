@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		018E2D462B017D2C00ED308D /* MatchMakingCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D452B017D2C00ED308D /* MatchMakingCodeGenerator.swift */; };
+		018E2D492B018B8C00ED308D /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D482B018B8C00ED308D /* QRCodeView.swift */; };
+		018E2D4C2B018FC000ED308D /* MatchMakingCodeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D4B2B018FC000ED308D /* MatchMakingCodeDemoView.swift */; };
+		018E2D4F2B0191D900ED308D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D4E2B0191D900ED308D /* Constants.swift */; };
+		0193D9872B006E0C006E73BC /* A1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0193D9862B006E0C006E73BC /* A1.json */; };
+		0193D9892B006F9A006E73BC /* A2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0193D9882B006F9A006E73BC /* A2.json */; };
+		0193D98B2B006FC7006E73BC /* B1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0193D98A2B006FC7006E73BC /* B1.json */; };
+		0193D98D2B006FD7006E73BC /* B2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0193D98C2B006FD7006E73BC /* B2.json */; };
+		0193D9912B006FF8006E73BC /* C2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0193D9902B006FF8006E73BC /* C2.json */; };
+		0193D9932B007018006E73BC /* C1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0193D9922B007018006E73BC /* C1.json */; };
+		0193D9962B00715B006E73BC /* WordReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0193D9952B00715B006E73BC /* WordReader.swift */; };
 		848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809742AFC2976000338BA /* WordCapsuleApp.swift */; };
 		848809772AFC2976000338BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809762AFC2976000338BA /* ContentView.swift */; };
 		848809792AFC2977000338BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848809782AFC2977000338BA /* Assets.xcassets */; };
@@ -14,6 +25,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		018E2D452B017D2C00ED308D /* MatchMakingCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakingCodeGenerator.swift; sourceTree = "<group>"; };
+		018E2D482B018B8C00ED308D /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		018E2D4B2B018FC000ED308D /* MatchMakingCodeDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakingCodeDemoView.swift; sourceTree = "<group>"; };
+		018E2D4E2B0191D900ED308D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0193D9862B006E0C006E73BC /* A1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = A1.json; sourceTree = "<group>"; };
+		0193D9882B006F9A006E73BC /* A2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = A2.json; sourceTree = "<group>"; };
+		0193D98A2B006FC7006E73BC /* B1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = B1.json; sourceTree = "<group>"; };
+		0193D98C2B006FD7006E73BC /* B2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = B2.json; sourceTree = "<group>"; };
+		0193D9902B006FF8006E73BC /* C2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = C2.json; sourceTree = "<group>"; };
+		0193D9922B007018006E73BC /* C1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = C1.json; sourceTree = "<group>"; };
+		0193D9952B00715B006E73BC /* WordReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReader.swift; sourceTree = "<group>"; };
 		848809712AFC2976000338BA /* WordCapsule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordCapsule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848809742AFC2976000338BA /* WordCapsuleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCapsuleApp.swift; sourceTree = "<group>"; };
 		848809762AFC2976000338BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +54,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		018E2D472B018B5000ED308D /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				018E2D482B018B8C00ED308D /* QRCodeView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		018E2D4A2B018FB100ED308D /* DemoViews */ = {
+			isa = PBXGroup;
+			children = (
+				018E2D4B2B018FC000ED308D /* MatchMakingCodeDemoView.swift */,
+			);
+			path = DemoViews;
+			sourceTree = "<group>";
+		};
+		018E2D4D2B0191C600ED308D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				018E2D4E2B0191D900ED308D /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0193D9812B006D4C006E73BC /* Words */ = {
+			isa = PBXGroup;
+			children = (
+				0193D9862B006E0C006E73BC /* A1.json */,
+				0193D9882B006F9A006E73BC /* A2.json */,
+				0193D98A2B006FC7006E73BC /* B1.json */,
+				0193D98C2B006FD7006E73BC /* B2.json */,
+				0193D9922B007018006E73BC /* C1.json */,
+				0193D9902B006FF8006E73BC /* C2.json */,
+			);
+			path = Words;
+			sourceTree = "<group>";
+		};
+		0193D9942B007046006E73BC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0193D9952B00715B006E73BC /* WordReader.swift */,
+				018E2D452B017D2C00ED308D /* MatchMakingCodeGenerator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		848809682AFC2976000338BA = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +119,11 @@
 		848809732AFC2976000338BA /* WordCapsule */ = {
 			isa = PBXGroup;
 			children = (
+				018E2D4D2B0191C600ED308D /* Utils */,
+				018E2D4A2B018FB100ED308D /* DemoViews */,
+				018E2D472B018B5000ED308D /* CustomViews */,
+				0193D9942B007046006E73BC /* Services */,
+				0193D9812B006D4C006E73BC /* Words */,
 				848809742AFC2976000338BA /* WordCapsuleApp.swift */,
 				848809762AFC2976000338BA /* ContentView.swift */,
 				848809782AFC2977000338BA /* Assets.xcassets */,
@@ -125,7 +198,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0193D9872B006E0C006E73BC /* A1.json in Resources */,
 				8488097C2AFC2977000338BA /* Preview Assets.xcassets in Resources */,
+				0193D98B2B006FC7006E73BC /* B1.json in Resources */,
+				0193D9932B007018006E73BC /* C1.json in Resources */,
+				0193D98D2B006FD7006E73BC /* B2.json in Resources */,
+				0193D9912B006FF8006E73BC /* C2.json in Resources */,
+				0193D9892B006F9A006E73BC /* A2.json in Resources */,
 				848809792AFC2977000338BA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +217,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				848809772AFC2976000338BA /* ContentView.swift in Sources */,
+				0193D9962B00715B006E73BC /* WordReader.swift in Sources */,
+				018E2D4C2B018FC000ED308D /* MatchMakingCodeDemoView.swift in Sources */,
+				018E2D492B018B8C00ED308D /* QRCodeView.swift in Sources */,
+				018E2D4F2B0191D900ED308D /* Constants.swift in Sources */,
 				848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */,
+				018E2D462B017D2C00ED308D /* MatchMakingCodeGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
