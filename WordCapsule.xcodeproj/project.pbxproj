@@ -18,6 +18,7 @@
 		0193D9912B006FF8006E73BC /* C2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0193D9902B006FF8006E73BC /* C2.json */; };
 		0193D9932B007018006E73BC /* C1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0193D9922B007018006E73BC /* C1.json */; };
 		0193D9962B00715B006E73BC /* WordReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0193D9952B00715B006E73BC /* WordReader.swift */; };
+		01A309E82B42C27300DDF4D1 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A309E72B42C27300DDF4D1 /* Color+Ext.swift */; };
 		848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809742AFC2976000338BA /* WordCapsuleApp.swift */; };
 		848809772AFC2976000338BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809762AFC2976000338BA /* ContentView.swift */; };
 		848809792AFC2977000338BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848809782AFC2977000338BA /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		0193D9902B006FF8006E73BC /* C2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = C2.json; sourceTree = "<group>"; };
 		0193D9922B007018006E73BC /* C1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = C1.json; sourceTree = "<group>"; };
 		0193D9952B00715B006E73BC /* WordReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReader.swift; sourceTree = "<group>"; };
+		01A309E72B42C27300DDF4D1 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		848809712AFC2976000338BA /* WordCapsule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordCapsule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848809742AFC2976000338BA /* WordCapsuleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCapsuleApp.swift; sourceTree = "<group>"; };
 		848809762AFC2976000338BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				018E2D4E2B0191D900ED308D /* Constants.swift */,
+				01A309E72B42C27300DDF4D1 /* Color+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -168,7 +171,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					848809702AFC2976000338BA = {
 						CreatedOnToolsVersion = 14.2;
@@ -221,6 +224,7 @@
 				018E2D4C2B018FC000ED308D /* MatchMakingCodeDemoView.swift in Sources */,
 				018E2D492B018B8C00ED308D /* QRCodeView.swift in Sources */,
 				018E2D4F2B0191D900ED308D /* Constants.swift in Sources */,
+				01A309E82B42C27300DDF4D1 /* Color+Ext.swift in Sources */,
 				848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */,
 				018E2D462B017D2C00ED308D /* MatchMakingCodeGenerator.swift in Sources */,
 			);
@@ -265,6 +269,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -325,6 +330,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
