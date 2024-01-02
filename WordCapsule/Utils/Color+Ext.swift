@@ -11,4 +11,5 @@ extension Color {
     static let wordBackground = Color("word_background")
     static let wordBorder = Color("word_border")
     static let wordText = Color("word_text")
+    static let background = Color("backgorund")
 }
