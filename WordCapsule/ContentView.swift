@@ -28,33 +28,38 @@ struct ContentView: View {
                stepOptions: ["3s", "5s", "7s", "10s", "12s", "15s"],
                buttonColors: [Color(#colorLiteral(red: 0.6293563069, green: 1, blue: 0.8426308106, alpha: 0.8403105778)), Color(#colorLiteral(red: 0.7879904464, green: 0.6399459111, blue: 1, alpha: 0.720493739)), Color(#colorLiteral(red: 1, green: 0.9699594332, blue: 0.4056734552, alpha: 0.84)), Color(#colorLiteral(red: 1, green: 0.5767133819, blue: 0.4263963641, alpha: 0.8403105778)), Color(#colorLiteral(red: 1, green: 0.6650804661, blue: 0.9354331803, alpha: 0.8403105778)), Color(#colorLiteral(red: 0.6609598777, green: 0.9016503197, blue: 0.9686274529, alpha: 0.8993574253))])
     ]
+    @EnvironmentObject var wordViewModel: WordViewModel
     
     var body: some View {
         NavigationStack {
             WordOptionView(option: options[viewIndex]) { index in
                 print(viewIndex)
-                if viewIndex == 0 {
-                    if index == 0 {
-                        viewIndex += 1
-                        fightView = true
-                    } else {
-                        viewIndex += 2
-                        fightView = false
-                    }
-                } else {
-                    if viewIndex == options.count - 1 {
-                        showNextView = true
-                    } else {
-                        viewIndex += 1
-                    }
-                }
+//                if viewIndex == 0 {
+//                    if index == 0 {
+//                        viewIndex += 1
+//                        fightView = true
+//                    } else {
+//                        viewIndex += 2
+//                        fightView = false
+//                    }
+//                } else {
+//                    if viewIndex == options.count - 1 {
+//                        showNextView = true
+//                    } else {
+//                        viewIndex += 1
+//                    }
+//                }
+                
+                showNextView = true
             }
             .navigationDestination(isPresented: $showNextView) {
-                if fightView {
-                    StartTheFightView()
-                } else {
-                    LearnNewWordView()
-                }
+                ChallengeView(words: prepareChallengeView())
+                
+//                if fightView {
+//                    StartTheFightView()
+//                } else {
+//                    LearnNewWordView()
+//                }
             }
             .navigationBarItems(
                 leading: viewIndex > 0 ? Button(action: {
@@ -72,6 +77,21 @@ struct ContentView: View {
             )
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    func prepareChallengeView() -> [Word] {
+        let code = MatchMakingCode.fromString("1-2-60-2023/11/12 15:30:00-0-1")!
+        let allWords = wordViewModel.getWord(level: code.level).shuffled()[0..<code.count]
+        var words: [Word] = []
+        
+        let startIndex = code.startIndex
+        let increment = code.increment
+        
+        for i in stride(from: startIndex, to: allWords.count, by: increment) {
+            words.append(allWords[i])
+        }
+        
+        return words
     }
 }
 

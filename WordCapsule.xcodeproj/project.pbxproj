@@ -19,6 +19,8 @@
 		0193D9932B007018006E73BC /* C1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0193D9922B007018006E73BC /* C1.json */; };
 		0193D9962B00715B006E73BC /* WordReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0193D9952B00715B006E73BC /* WordReader.swift */; };
 		01A309E82B42C27300DDF4D1 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A309E72B42C27300DDF4D1 /* Color+Ext.swift */; };
+		01A309F22B46BF7400DDF4D1 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A309F12B46BF7400DDF4D1 /* ChallengeView.swift */; };
+		01A309F42B47CB3A00DDF4D1 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A309F32B47CB3900DDF4D1 /* ResultView.swift */; };
 		841EC41B2B44BB4C00435384 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41A2B44BB4C00435384 /* String+Ext.swift */; };
 		841EC41D2B44BBC700435384 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41C2B44BBC600435384 /* UIImage+Ext.swift */; };
 		841EC41F2B44BC5D00435384 /* WordOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41E2B44BC5D00435384 /* WordOptionView.swift */; };
@@ -43,6 +45,8 @@
 		0193D9922B007018006E73BC /* C1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = C1.json; sourceTree = "<group>"; };
 		0193D9952B00715B006E73BC /* WordReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordReader.swift; sourceTree = "<group>"; };
 		01A309E72B42C27300DDF4D1 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		01A309F12B46BF7400DDF4D1 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		01A309F32B47CB3900DDF4D1 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		841EC41A2B44BB4C00435384 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		841EC41C2B44BBC600435384 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		841EC41E2B44BC5D00435384 /* WordOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOptionView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		01A309F02B46BEE000DDF4D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01A309F12B46BF7400DDF4D1 /* ChallengeView.swift */,
+				01A309F32B47CB3900DDF4D1 /* ResultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		848809682AFC2976000338BA = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 				018E2D472B018B5000ED308D /* CustomViews */,
 				0193D9942B007046006E73BC /* Services */,
 				0193D9812B006D4C006E73BC /* Words */,
+				01A309F02B46BEE000DDF4D1 /* Views */,
 				848809742AFC2976000338BA /* WordCapsuleApp.swift */,
 				848809762AFC2976000338BA /* ContentView.swift */,
 				848809782AFC2977000338BA /* Assets.xcassets */,
@@ -236,6 +250,7 @@
 			files = (
 				841EC41B2B44BB4C00435384 /* String+Ext.swift in Sources */,
 				848809772AFC2976000338BA /* ContentView.swift in Sources */,
+				01A309F42B47CB3A00DDF4D1 /* ResultView.swift in Sources */,
 				841EC4212B44BCDE00435384 /* StartTheFightView.swift in Sources */,
 				0193D9962B00715B006E73BC /* WordReader.swift in Sources */,
 				841EC41F2B44BC5D00435384 /* WordOptionView.swift in Sources */,
@@ -244,6 +259,7 @@
 				018E2D492B018B8C00ED308D /* QRCodeView.swift in Sources */,
 				841EC41D2B44BBC700435384 /* UIImage+Ext.swift in Sources */,
 				018E2D4F2B0191D900ED308D /* Constants.swift in Sources */,
+				01A309F22B46BF7400DDF4D1 /* ChallengeView.swift in Sources */,
 				01A309E82B42C27300DDF4D1 /* Color+Ext.swift in Sources */,
 				848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */,
 				018E2D462B017D2C00ED308D /* MatchMakingCodeGenerator.swift in Sources */,
