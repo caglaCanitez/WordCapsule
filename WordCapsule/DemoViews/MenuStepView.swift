@@ -1,5 +1,5 @@
 //
-//  MenuStepsView.swift
+//  MenuStepView.swift
 //  WordCapsule
 //
 //  Created by Cagla CANITEZ on 15.01.2024.
