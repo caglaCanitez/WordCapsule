@@ -33,6 +33,7 @@
 		84908FAD2B556BE900B7D7EE /* RectangleMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84908FAC2B556BE900B7D7EE /* RectangleMenuView.swift */; };
 		84908FAF2B556CE800B7D7EE /* HomePageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84908FAE2B556CE800B7D7EE /* HomePageTitleView.swift */; };
 		84908FB12B556CF800B7D7EE /* HomePageBacgorundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84908FB02B556CF800B7D7EE /* HomePageBacgorundView.swift */; };
+		84908FB52B5C34E900B7D7EE /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84908FB42B5C34E900B7D7EE /* WordModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		84908FAC2B556BE900B7D7EE /* RectangleMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleMenuView.swift; sourceTree = "<group>"; };
 		84908FAE2B556CE800B7D7EE /* HomePageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTitleView.swift; sourceTree = "<group>"; };
 		84908FB02B556CF800B7D7EE /* HomePageBacgorundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageBacgorundView.swift; sourceTree = "<group>"; };
+		84908FB42B5C34E900B7D7EE /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				84908FA82B55690100B7D7EE /* MenuModel.swift */,
+				84908FB42B5C34E900B7D7EE /* WordModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				841EC41D2B44BBC700435384 /* UIImage+Ext.swift in Sources */,
 				018E2D4F2B0191D900ED308D /* Constants.swift in Sources */,
 				01A309E82B42C27300DDF4D1 /* Color+Ext.swift in Sources */,
+				84908FB52B5C34E900B7D7EE /* WordModel.swift in Sources */,
 				84908FAB2B556B2C00B7D7EE /* MenuStepView.swift in Sources */,
 				848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */,
 				018E2D462B017D2C00ED308D /* MatchMakingCodeGenerator.swift in Sources */,
