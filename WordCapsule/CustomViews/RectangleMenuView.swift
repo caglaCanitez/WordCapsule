@@ -39,7 +39,6 @@ struct RectangleMenuView: View {
                             .foregroundColor(Color.wordText)
                     }
                     
-                    
                     // TODO: Add progress bar
 //                    if menu.showProgress {
 //                        ProgressView(value: menu.learningProgress, total: word count in each level)

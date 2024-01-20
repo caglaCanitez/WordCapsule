@@ -21,7 +21,6 @@
 		01A309E82B42C27300DDF4D1 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A309E72B42C27300DDF4D1 /* Color+Ext.swift */; };
 		841EC41B2B44BB4C00435384 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41A2B44BB4C00435384 /* String+Ext.swift */; };
 		841EC41D2B44BBC700435384 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41C2B44BBC600435384 /* UIImage+Ext.swift */; };
-		841EC41F2B44BC5D00435384 /* WordOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41E2B44BC5D00435384 /* WordOptionView.swift */; };
 		841EC4212B44BCDE00435384 /* StartTheFightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC4202B44BCDE00435384 /* StartTheFightView.swift */; };
 		841EC4232B44BD0100435384 /* LearnNewWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC4222B44BD0100435384 /* LearnNewWordView.swift */; };
 		848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809742AFC2976000338BA /* WordCapsuleApp.swift */; };
@@ -51,7 +50,6 @@
 		01A309E72B42C27300DDF4D1 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		841EC41A2B44BB4C00435384 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		841EC41C2B44BBC600435384 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
-		841EC41E2B44BC5D00435384 /* WordOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordOptionView.swift; sourceTree = "<group>"; };
 		841EC4202B44BCDE00435384 /* StartTheFightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTheFightView.swift; sourceTree = "<group>"; };
 		841EC4222B44BD0100435384 /* LearnNewWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNewWordView.swift; sourceTree = "<group>"; };
 		848809712AFC2976000338BA /* WordCapsule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordCapsule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				018E2D482B018B8C00ED308D /* QRCodeView.swift */,
-				841EC41E2B44BC5D00435384 /* WordOptionView.swift */,
 				84908FAC2B556BE900B7D7EE /* RectangleMenuView.swift */,
 				84908FAE2B556CE800B7D7EE /* HomePageTitleView.swift */,
 				84908FB02B556CF800B7D7EE /* HomePageBacgorundView.swift */,
@@ -274,7 +271,6 @@
 				84908FA92B55690100B7D7EE /* MenuModel.swift in Sources */,
 				841EC4212B44BCDE00435384 /* StartTheFightView.swift in Sources */,
 				0193D9962B00715B006E73BC /* WordReader.swift in Sources */,
-				841EC41F2B44BC5D00435384 /* WordOptionView.swift in Sources */,
 				018E2D4C2B018FC000ED308D /* MatchMakingCodeDemoView.swift in Sources */,
 				84908FAF2B556CE800B7D7EE /* HomePageTitleView.swift in Sources */,
 				841EC4232B44BD0100435384 /* LearnNewWordView.swift in Sources */,
