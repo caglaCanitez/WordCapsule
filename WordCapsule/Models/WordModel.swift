@@ -15,47 +15,15 @@ struct Word: Codable, Equatable {
 
 class WordModel: ObservableObject {
     @Published var wordList: [Word] = []
+    @Published var currentIndex: Int = 0
     
-    private var A1: [Word] = []
-    private var A2: [Word] = []
-    private var B1: [Word] = []
-    private var B2: [Word] = []
-    private var C1: [Word] = []
-    private var C2: [Word] = []
-    
-    static let shared = WordModel()
-    
-    init() {
-        A1 = WordModel.shared.readJSON(forLevel: "A1")
-        A2 = WordModel.shared.readJSON(forLevel: "A2")
-        
-        B1 = WordModel.shared.readJSON(forLevel: "B1")
-        B2 = WordModel.shared.readJSON(forLevel: "B2")
-        
-        C1 = WordModel.shared.readJSON(forLevel: "C1")
-        C2 = WordModel.shared.readJSON(forLevel: "C2")
-    }
-    
-    func readJSON(forLevel level: String) -> [Word] {
-        guard let path = Bundle.main.path(forResource: level, ofType: "json") else {
-            print("Couldn't find the file.")
-            return []
-        }
-        
-        do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-            let words = try JSONDecoder().decode([Word].self, from: data)
-            return words
-        } catch {
-            print("Error reading JSON: \(error.localizedDescription)")
-            return []
-        }
+    var currentWord: Word {
+        guard wordList.indices.contains(currentIndex) else { return Word(word: "No more words", type: "", mean: "")}
+        return wordList[currentIndex]
     }
     
     func fetchWords(forLevel level: String, wordCount: Int) {
-        let fileName = "\(level).json"
-        
-        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
+        if let path = Bundle.main.path(forResource: level, ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let decoder = JSONDecoder()
@@ -75,9 +43,25 @@ class WordModel: ObservableObject {
                 wordList = selectedWords
             } catch {
                 print("Error reading JSON file: \(error)")
+                wordList = []
             }
         } else {
             print("JSON file not found for level: \(level)")
+            wordList = []
+        }
+    }
+    
+    func showNextWord() {
+        currentIndex += 1
+        if currentIndex >= wordList.count {
+            currentIndex = -1
+        }
+    }
+    
+    func showBackWord() {
+        currentIndex -= 1
+        if currentIndex < 0 {
+            currentIndex = -1
         }
     }
 }

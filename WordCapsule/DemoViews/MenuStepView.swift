@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MenuStepView: View {
     @ObservedObject var menuModel: MenuModel
+    @StateObject var wordModel = WordModel()
+    
     var menu: MenuModel.Menu
     var pageTitle: String {
         menu.pageTitle
@@ -59,7 +61,18 @@ struct MenuStepView: View {
                     if let next = menu.next {
                         MenuStepView(menuModel: menuModel, menu: next)
                     } else {
-                        LearnNewWordView()
+                        switch menuModel.choosedItems[.learningCase]?.value as? Int {
+                        case 0:
+                            TrainingView(wordModel: wordModel).onAppear {
+                                wordModel.currentIndex = 0
+                                wordModel.fetchWords(forLevel: menuModel.choosedItems[.level]?.value as? String ?? "A1",
+                                                     wordCount: menuModel.choosedItems[.wordCount]?.value as? Int ?? 3)
+                            }
+                        case 1:
+                            QuizView()
+                        case 2, _:
+                            FightView()
+                        }
                     }
                 }
             }

@@ -27,6 +27,19 @@ class MenuModel: ObservableObject {
             }
         }
         
+        var value: [Any] {
+            switch self {
+            case .learningCase:
+                return [0, 1, 2]
+            case .level:
+                return ["A1", "A2", "B1", "B2", "C1", "C2"]
+            case .wordCount:
+                return [10, 20, 30, 40, 50, 60]
+            case .duration:
+                return [3, 5, 7, 10, 12, 15]
+            }
+        }
+        
         var titles: [String] {
             switch self {
             case .learningCase:
@@ -77,30 +90,32 @@ class MenuModel: ObservableObject {
 
             switch nextMenu {
             case .learningCase, .level, .wordCount, .duration:
-                choosedItems[nextMenu] = MenuModel.MenuItem(title: "", subTitle: "", image: "")
+                choosedItems[nextMenu] = MenuModel.MenuItem(value: (Any).self, title: "", subTitle: "", image: "")
                 nextMenu.setMenuDefaultItem(in: &choosedItems)
             }
         }
     }
     
     @Published var choosedItems: [Menu: MenuItem] = [
-        .learningCase: MenuItem(title: "", subTitle: "", image: ""),
-        .level: MenuItem(title: "", subTitle: "", image: ""),
-        .wordCount: MenuItem(title: "", subTitle: "", image: ""),
-        .duration: MenuItem(title: "", subTitle: "", image: "")
+        .learningCase: MenuItem(value: "", title: "", subTitle: "", image: ""),
+        .level: MenuItem(value: "", title: "", subTitle: "", image: ""),
+        .wordCount: MenuItem(value: 0, title: "", subTitle: "", image: ""),
+        .duration: MenuItem(value: 0, title: "", subTitle: "", image: "")
     ]
     
     struct MenuItem {
+        var value: Any
         var title: String
         var subTitle: String?
         var image: String?
     }
     
     func selectedItem(at index: Int, for selectedMenu: Menu) -> MenuItem {
+        let value = selectedMenu.value[safe: index]
         let title = selectedMenu.titles[safe: index] ?? ""
         let subTitle = selectedMenu.subTitles[safe: index]
         let image = selectedMenu.image[safe: index]
         
-        return MenuItem(title: title, subTitle: subTitle, image: image)
+        return MenuItem(value: value as Any, title: title, subTitle: subTitle, image: image)
     }
 }
