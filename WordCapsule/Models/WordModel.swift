@@ -18,8 +18,11 @@ class WordModel: ObservableObject {
     @Published var currentIndex: Int = 0
     
     var currentWord: Word {
-        guard wordList.indices.contains(currentIndex) else { return Word(word: "No more words", type: "", mean: "")}
-        return wordList[currentIndex]
+        wordList.indices.contains(currentIndex) ? wordList[currentIndex] : Word(word: "No more words", type: "", mean: "")
+    }
+    
+    var listCount: Int {
+        wordList.count
     }
     
     func fetchWords(forLevel level: String, wordCount: Int) {
@@ -55,17 +58,11 @@ class WordModel: ObservableObject {
             }
     }
     
-    func showNextWord() {
-        currentIndex += 1
-        if currentIndex >= wordList.count {
-            currentIndex = -1
-        }
+    func showBackWord() {
+        currentIndex = max(0, currentIndex - 1)
     }
     
-    func showBackWord() {
-        currentIndex -= 1
-        if currentIndex < 0 {
-            currentIndex = -1
-        }
+    func showNextWord() {
+        currentIndex = min(wordList.count - 1, currentIndex + 1)
     }
 }

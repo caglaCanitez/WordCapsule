@@ -69,14 +69,18 @@ struct TrainingView: View {
                                 Spacer()
                                 
                                 HStack {
-                                    IconButtonView(iconType: .backward) {
-                                        wordModel.showBackWord()
+                                    if wordModel.currentIndex > 0 {
+                                        IconButtonView(iconType: .backward) {
+                                            wordModel.showBackWord()
+                                        }
                                     }
                                     
                                     Spacer()
                                     
-                                    IconButtonView(iconType: .forward) {
-                                        wordModel.showNextWord()
+                                    if wordModel.currentIndex < wordModel.listCount - 1 {
+                                        IconButtonView(iconType: .forward) {
+                                            wordModel.showNextWord()
+                                        }
                                     }
                                 }
                             }
