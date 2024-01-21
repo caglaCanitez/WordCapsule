@@ -23,32 +23,36 @@ class WordModel: ObservableObject {
     }
     
     func fetchWords(forLevel level: String, wordCount: Int) {
-        if let path = Bundle.main.path(forResource: level, ofType: "json") {
+//                var allWords = try decoder.decode([Word].self, from: data)
+//
+//                var selectedWords: [Word] = []
+//                for _ in 0..<min(wordCount, allWords.count) {
+//                    if let randomWord = allWords.randomElement() {
+//                        selectedWords.append(randomWord)
+//                        if let index = allWords.firstIndex(of: randomWord) {
+//                            allWords.remove(at: index)
+//                        }
+//                    }
+//                }
+//
+//                wordList = selectedWords
+        
+        guard let url = Bundle.main.url(forResource: level, withExtension: "json") else {
+                print("JSON file not found for level: \(level)")
+                wordList = []
+                return
+            }
+
             do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let decoder = JSONDecoder()
-                
-                var allWords = try decoder.decode([Word].self, from: data)
-                
-                var selectedWords: [Word] = []
-                for _ in 0..<min(wordCount, allWords.count) {
-                    if let randomWord = allWords.randomElement() {
-                        selectedWords.append(randomWord)
-                        if let index = allWords.firstIndex(of: randomWord) {
-                            allWords.remove(at: index)
-                        }
-                    }
-                }
-                
-                wordList = selectedWords
+                let data = try Data(contentsOf: url)
+                let allWords = try JSONDecoder().decode([Word].self, from: data)
+
+                let shuffledWords = allWords.shuffled()
+                wordList = Array(shuffledWords.prefix(min(wordCount, shuffledWords.count)))
             } catch {
                 print("Error reading JSON file: \(error)")
                 wordList = []
             }
-        } else {
-            print("JSON file not found for level: \(level)")
-            wordList = []
-        }
     }
     
     func showNextWord() {
