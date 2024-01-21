@@ -32,7 +32,7 @@ struct TrainingView: View {
                             VStack {
                                 HStack {
                                     IconButtonView(iconType: .speaker) {
-                                        // TODO: Add sound api
+                                        Player.shared.play(word: wordModel.currentWord.word)
                                     }
                                     
                                     Spacer()
@@ -54,7 +54,7 @@ struct TrainingView: View {
                                             .fontWeight(.bold)
                                             .foregroundColor(.blue)
                                     )
-                                    
+                                
                                 
                                 Text(wordModel.currentWord.type)
                                     .font(.headline)

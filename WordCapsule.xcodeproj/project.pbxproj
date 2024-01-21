@@ -21,6 +21,7 @@
 		01A309E82B42C27300DDF4D1 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A309E72B42C27300DDF4D1 /* Color+Ext.swift */; };
 		841EC41B2B44BB4C00435384 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41A2B44BB4C00435384 /* String+Ext.swift */; };
 		841EC41D2B44BBC700435384 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41C2B44BBC600435384 /* UIImage+Ext.swift */; };
+		8465212A2B5DBBE400EE2303 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846521292B5DBBE400EE2303 /* Player.swift */; };
 		848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809742AFC2976000338BA /* WordCapsuleApp.swift */; };
 		848809772AFC2976000338BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809762AFC2976000338BA /* ContentView.swift */; };
 		848809792AFC2977000338BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848809782AFC2977000338BA /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		01A309E72B42C27300DDF4D1 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		841EC41A2B44BB4C00435384 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		841EC41C2B44BBC600435384 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		846521292B5DBBE400EE2303 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		848809712AFC2976000338BA /* WordCapsule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordCapsule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848809742AFC2976000338BA /* WordCapsuleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCapsuleApp.swift; sourceTree = "<group>"; };
 		848809762AFC2976000338BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				84908FA82B55690100B7D7EE /* MenuModel.swift */,
 				84908FB42B5C34E900B7D7EE /* WordModel.swift */,
+				846521292B5DBBE400EE2303 /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8465212A2B5DBBE400EE2303 /* Player.swift in Sources */,
 				84908FB12B556CF800B7D7EE /* HomePageBacgorundView.swift in Sources */,
 				841EC41B2B44BB4C00435384 /* String+Ext.swift in Sources */,
 				848809772AFC2976000338BA /* ContentView.swift in Sources */,
