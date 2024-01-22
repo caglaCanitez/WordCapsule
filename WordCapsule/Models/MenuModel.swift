@@ -32,7 +32,7 @@ class MenuModel: ObservableObject {
             case .learningCase:
                 return [0, 1, 2]
             case .level:
-                return ["A1", "A2", "B1", "B2", "C1", "C2"]
+                return [Level.A1, Level.A2, Level.B1, Level.B2, Level.C1, Level.C2]
             case .wordCount:
                 return [10, 20, 30, 40, 50, 60]
             case .duration:

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuStepView: View {
     @ObservedObject var menuModel: MenuModel
-    @StateObject var wordModel = WordModel()
+    @EnvironmentObject var wordModel: WordModel
     
     var menu: MenuModel.Menu
     var pageTitle: String {
@@ -63,10 +63,12 @@ struct MenuStepView: View {
                     } else {
                         switch menuModel.choosedItems[.learningCase]?.value as? Int {
                         case 0:
-                            TrainingView(wordModel: wordModel).onAppear {
-                                wordModel.currentIndex = 0
-                                wordModel.fetchWords(forLevel: menuModel.choosedItems[.level]?.value as? String ?? "A1",
-                                                     wordCount: menuModel.choosedItems[.wordCount]?.value as? Int ?? 3)
+                            if let level = menuModel.choosedItems[.level]?.value as? Level,
+                               let wordCount = menuModel.choosedItems[.wordCount]?.value as? Int {
+                                TrainingView(wordModel: wordModel)
+                                    .onAppear {
+                                        wordModel.fetchWords(forLevel: level, wordCount: wordCount)
+                                    }
                             }
                         case 1:
                             QuizView()
@@ -81,7 +83,7 @@ struct MenuStepView: View {
     
     fileprivate func setChoosedItem(at index: Int) {
         let selectedItem = menuModel.selectedItem(at: index, for: menu)
-
+        
         if menuModel.choosedItems[menu]?.title != "" {
             menu.setMenuDefaultItem(in: &menuModel.choosedItems)
         }

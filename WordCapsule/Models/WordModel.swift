@@ -5,7 +5,7 @@
 //  Created by Cagla CANITEZ on 20.01.2024.
 //
 
-import Foundation
+import SwiftUI
 
 struct Word: Codable, Equatable {
     let word: String
@@ -13,9 +13,34 @@ struct Word: Codable, Equatable {
     let mean: String
 }
 
+enum Level: String, Codable {
+    case A1
+    case A2
+    case B1
+    case B2
+    case C1
+    case C2
+    
+    var stringValue: String {
+        return self.rawValue
+    }
+    
+    var color: Color {
+        switch self {
+        case .A1, .A2:
+            return .red
+        case .B1, .B2:
+            return .blue
+        case .C1, .C2:
+            return .green
+        }
+    }
+}
+
 class WordModel: ObservableObject {
     @Published var wordList: [Word] = []
     @Published var currentIndex: Int = 0
+    @Published var level: Level = .A1
     
     var currentWord: Word {
         wordList.indices.contains(currentIndex) ? wordList[currentIndex] : Word(word: "No more words", type: "", mean: "")
@@ -25,37 +50,28 @@ class WordModel: ObservableObject {
         wordList.count
     }
     
-    func fetchWords(forLevel level: String, wordCount: Int) {
-//                var allWords = try decoder.decode([Word].self, from: data)
-//
-//                var selectedWords: [Word] = []
-//                for _ in 0..<min(wordCount, allWords.count) {
-//                    if let randomWord = allWords.randomElement() {
-//                        selectedWords.append(randomWord)
-//                        if let index = allWords.firstIndex(of: randomWord) {
-//                            allWords.remove(at: index)
-//                        }
-//                    }
-//                }
-//
-//                wordList = selectedWords
+    var color: Color {
+        level.color
+    }
+    
+    func fetchWords(forLevel level: Level, wordCount: Int) {        
+        guard let url = Bundle.main.url(forResource: level.stringValue, withExtension: "json") else {
+            print("JSON file not found for level: \(level)")
+            wordList = []
+            return
+        }
         
-        guard let url = Bundle.main.url(forResource: level, withExtension: "json") else {
-                print("JSON file not found for level: \(level)")
-                wordList = []
-                return
-            }
-
-            do {
-                let data = try Data(contentsOf: url)
-                let allWords = try JSONDecoder().decode([Word].self, from: data)
-
-                let shuffledWords = allWords.shuffled()
-                wordList = Array(shuffledWords.prefix(min(wordCount, shuffledWords.count)))
-            } catch {
-                print("Error reading JSON file: \(error)")
-                wordList = []
-            }
+        do {
+            let data = try Data(contentsOf: url)
+            let allWords = try JSONDecoder().decode([Word].self, from: data)
+            
+            let shuffledWords = allWords.shuffled()
+            wordList = Array(shuffledWords.prefix(min(wordCount, shuffledWords.count)))
+            self.level = level
+        } catch {
+            print("Error reading JSON file: \(error)")
+            wordList = []
+        }
     }
     
     func showBackWord() {

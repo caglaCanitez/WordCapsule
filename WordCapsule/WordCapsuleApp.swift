@@ -35,12 +35,13 @@ class WordViewModel: ObservableObject {
 @main
 struct WordCapsuleApp: App {
     
-    @StateObject var wordViewModel: WordViewModel = WordViewModel()
+//    @StateObject var wordViewModel: WordViewModel = WordViewModel()
+    @StateObject var wordModel = WordModel()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(wordViewModel)
+                .environmentObject(wordModel)
         }
     }
 }

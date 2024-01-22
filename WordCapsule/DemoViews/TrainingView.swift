@@ -25,8 +25,7 @@ struct TrainingView: View {
                     Spacer()
                     
                     RoundedRectangle(cornerRadius: 30)
-                    // TODO: Set different color for each level. For now, it is blue
-                        .fill(.blue)
+                        .fill(wordModel.color)
                         .frame(width: width, height: height)
                         .overlay(
                             VStack {
@@ -52,7 +51,7 @@ struct TrainingView: View {
                                         Text(wordModel.currentWord.word.capitalized)
                                             .font(.title)
                                             .fontWeight(.bold)
-                                            .foregroundColor(.blue)
+                                            .foregroundColor(wordModel.color)
                                     )
                                 
                                 
