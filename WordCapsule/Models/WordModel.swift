@@ -41,6 +41,7 @@ class WordModel: ObservableObject {
     @Published var wordList: [Word] = []
     @Published var currentIndex: Int = 0
     @Published var level: Level = .A1
+    @Published var answerStatus: AnswerStatus = .none
     
     var currentWord: Word {
         wordList.indices.contains(currentIndex) ? wordList[currentIndex] : Word(word: "No more words", type: "", mean: "")
@@ -54,7 +55,7 @@ class WordModel: ObservableObject {
         level.color
     }
     
-    func fetchWords(forLevel level: Level, wordCount: Int) {        
+    func fetchWords(forLevel level: Level, wordCount: Int) {
         guard let url = Bundle.main.url(forResource: level.stringValue, withExtension: "json") else {
             print("JSON file not found for level: \(level)")
             wordList = []
@@ -71,6 +72,14 @@ class WordModel: ObservableObject {
         } catch {
             print("Error reading JSON file: \(error)")
             wordList = []
+        }
+    }
+    
+    func checkAnswer(answer: String) {
+        if answer.lowercased() == currentWord.mean.lowercased() {
+            answerStatus = .correct
+        } else {
+            answerStatus = .incorrect
         }
     }
     

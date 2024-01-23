@@ -71,7 +71,13 @@ struct MenuStepView: View {
                                     }
                             }
                         case 1:
-                            QuizView()
+                            if let level = menuModel.choosedItems[.level]?.value as? Level,
+                               let wordCount = menuModel.choosedItems[.wordCount]?.value as? Int {
+                                QuizView(wordModel: wordModel)
+                                    .onAppear {
+                                        wordModel.fetchWords(forLevel: level, wordCount: wordCount)
+                                    }
+                            }
                         case 2, _:
                             FightView()
                         }
