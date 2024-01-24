@@ -42,6 +42,7 @@ class WordModel: ObservableObject {
     @Published var currentIndex: Int = 0
     @Published var level: Level = .A1
     @Published var answerStatus: AnswerStatus = .none
+    @Published var duration: Int = 0
     
     var currentWord: Word {
         wordList.indices.contains(currentIndex) ? wordList[currentIndex] : Word(word: "No more words", type: "", mean: "")

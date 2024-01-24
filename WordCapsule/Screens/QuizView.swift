@@ -9,9 +9,11 @@ import SwiftUI
 
 struct QuizView: View {
     @ObservedObject var wordModel: WordModel
+    @State var count: Int
     
     let height = UIScreen.main.bounds.height / 2
     let width = UIScreen.main.bounds.width / 1.3
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
@@ -31,6 +33,8 @@ struct QuizView: View {
                         .font(.headline)
                         .fontWeight(.light)
                         .foregroundColor(.wordText)
+                    
+                    Text("\(count)")
                     
                     
                     RoundedRectangle(cornerRadius: 30)
@@ -59,6 +63,7 @@ struct QuizView: View {
                                             withAnimation {
                                                 wordModel.checkAnswer(answer: array[index])
                                                 wordModel.showNextWord()
+                                                count = wordModel.duration
                                             }
                                         } label: {
                                             RoundedRectangle(cornerRadius: 30)
@@ -81,6 +86,7 @@ struct QuizView: View {
                                     if wordModel.currentIndex < wordModel.listCount - 1 {
                                         IconButtonView(iconType: .forward) {
                                             wordModel.showNextWord()
+                                            count = wordModel.duration
                                         }
                                     }
                                     
@@ -102,6 +108,15 @@ struct QuizView: View {
                     }
                     
                     Spacer()
+                }.onReceive(timer) { _ in
+                    if count <= 1 {
+                        if wordModel.currentIndex < wordModel.listCount - 1 {
+                            wordModel.showNextWord()
+                            count = wordModel.duration
+                        }
+                    } else {
+                        count -= 1
+                    }
                 }
             }
         }

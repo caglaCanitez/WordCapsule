@@ -19,6 +19,8 @@ struct MenuStepView: View {
         menu.titles
     }
     
+//    var timerManager: TimerManager?
+    
     var body: some View {
         let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
         
@@ -72,9 +74,11 @@ struct MenuStepView: View {
                             }
                         case 1:
                             if let level = menuModel.choosedItems[.level]?.value as? Level,
-                               let wordCount = menuModel.choosedItems[.wordCount]?.value as? Int {
-                                QuizView(wordModel: wordModel)
-                                    .onAppear {
+                               let wordCount = menuModel.choosedItems[.wordCount]?.value as? Int,
+                               let duration = menuModel.choosedItems[.duration]?.value as? Int {
+                                QuizView(wordModel: wordModel, count: duration)
+                                    .onAppear{
+                                        wordModel.duration = duration
                                         wordModel.fetchWords(forLevel: level, wordCount: wordCount)
                                     }
                             }
@@ -96,4 +100,10 @@ struct MenuStepView: View {
         
         menuModel.choosedItems[menu] = selectedItem
     }
+    
+//    fileprivate mutating func createTimerManager() {
+//        if let duration = menuModel.choosedItems[.duration]?.value as? Int {
+//            self.timerManager = TimerManager(initialCount: duration)
+//        }
+//    }
 }
