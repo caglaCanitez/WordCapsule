@@ -17,7 +17,6 @@ struct QuizView: View {
     
     var body: some View {
         let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
-        let array: [String] = ["aaa", "bbb", "ccc", "ddd"]
         
         ZStack {
             // MARK: - Backgorund Layer
@@ -49,7 +48,7 @@ struct QuizView: View {
                                     .frame(width: width/2, height: height/3)
                                     .padding()
                                     .overlay(
-                                        Text(wordModel.currentWord.word.capitalized)
+                                        Text(wordModel.currentWordWithAnswers.word.word.capitalized)
                                             .font(.title)
                                             .fontWeight(.bold)
                                             .foregroundColor(wordModel.color)
@@ -58,20 +57,18 @@ struct QuizView: View {
                                 Spacer()
                                 
                                 LazyVGrid(columns: columns, spacing: 10) {
-                                    ForEach(array.indices, id: \.self) { index in
+                                    ForEach(wordModel.currentWordWithAnswers.answerOptions, id: \.self) { option in
                                         Button {
-                                            withAnimation {
-                                                wordModel.checkAnswer(answer: array[index])
-                                                wordModel.showNextWord()
-                                                count = wordModel.duration
-                                            }
+                                            wordModel.checkAnswer(answer: option)
+                                            wordModel.showNextWord(for: .Quiz)
+                                            count = wordModel.duration
                                         } label: {
                                             RoundedRectangle(cornerRadius: 30)
                                                 .foregroundColor(.white)
                                                 .frame(height: 50)
                                                 .padding()
                                                 .overlay {
-                                                    Text(array[index])
+                                                    Text(option)
                                                         .foregroundColor(wordModel.color)
                                                 }
                                         }
@@ -85,7 +82,7 @@ struct QuizView: View {
                                     
                                     if wordModel.currentIndex < wordModel.listCount - 1 {
                                         IconButtonView(iconType: .forward) {
-                                            wordModel.showNextWord()
+                                            wordModel.showNextWord(for: .Quiz)
                                             count = wordModel.duration
                                         }
                                     }
@@ -111,7 +108,7 @@ struct QuizView: View {
                 }.onReceive(timer) { _ in
                     if count <= 1 {
                         if wordModel.currentIndex < wordModel.listCount - 1 {
-                            wordModel.showNextWord()
+                            wordModel.showNextWord(for: .Quiz)
                             count = wordModel.duration
                         }
                     } else {

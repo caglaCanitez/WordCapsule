@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class MenuModel: ObservableObject {
+final class MenuModel: ObservableObject {
     enum Menu {
         case learningCase
         case level
@@ -30,7 +30,7 @@ class MenuModel: ObservableObject {
         var value: [Any] {
             switch self {
             case .learningCase:
-                return [0, 1, 2]
+                return [LearningCase.Training, LearningCase.Quiz, LearningCase.Fight]
             case .level:
                 return [Level.A1, Level.A2, Level.B1, Level.B2, Level.C1, Level.C2]
             case .wordCount:

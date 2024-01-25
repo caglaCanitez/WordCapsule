@@ -61,26 +61,25 @@ struct MenuStepView: View {
                     if let next = menu.next {
                         MenuStepView(menuModel: menuModel, menu: next)
                     } else {
-                        switch menuModel.choosedItems[.learningCase]?.value as? Int {
-                        case 0:
+                        switch menuModel.choosedItems[.learningCase]?.value as? LearningCase {
+                        case .Training:
                             if let level = menuModel.choosedItems[.level]?.value as? Level,
                                let wordCount = menuModel.choosedItems[.wordCount]?.value as? Int {
                                 TrainingView(wordModel: wordModel)
                                     .onAppear {
-                                        wordModel.fetchWords(forLevel: level, wordCount: wordCount)
+                                        wordModel.fetchWordList(for: level, wordCount: wordCount)
                                     }
                             }
-                        case 1:
+                        case .Quiz:
                             if let level = menuModel.choosedItems[.level]?.value as? Level,
                                let wordCount = menuModel.choosedItems[.wordCount]?.value as? Int,
                                let duration = menuModel.choosedItems[.duration]?.value as? Int {
                                 QuizView(wordModel: wordModel, count: duration)
-                                    .onAppear{
-                                        wordModel.duration = duration
-                                        wordModel.fetchWords(forLevel: level, wordCount: wordCount)
+                                    .onAppear {
+                                        wordModel.fetchWordListWithAnswers(for: level, wordCount: wordCount, duration: duration)
                                     }
                             }
-                        case 2, _:
+                        case .Fight, _:
                             FightView()
                         }
                     }
@@ -98,6 +97,4 @@ struct MenuStepView: View {
         
         menuModel.choosedItems[menu] = selectedItem
     }
-    
-
 }

@@ -22,6 +22,10 @@
 		841EC41B2B44BB4C00435384 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41A2B44BB4C00435384 /* String+Ext.swift */; };
 		841EC41D2B44BBC700435384 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EC41C2B44BBC600435384 /* UIImage+Ext.swift */; };
 		84511C1B2B5FC599005165D8 /* AnswerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C1A2B5FC599005165D8 /* AnswerStatus.swift */; };
+		84511C1F2B613A1F005165D8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C1E2B613A1F005165D8 /* Word.swift */; };
+		84511C212B613A41005165D8 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C202B613A41005165D8 /* Level.swift */; };
+		84511C232B613C9D005165D8 /* LearningCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C222B613C9D005165D8 /* LearningCase.swift */; };
+		84511C252B62B4E0005165D8 /* WordWithAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C242B62B4E0005165D8 /* WordWithAnswers.swift */; };
 		8465212A2B5DBBE400EE2303 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846521292B5DBBE400EE2303 /* Player.swift */; };
 		848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809742AFC2976000338BA /* WordCapsuleApp.swift */; };
 		848809772AFC2976000338BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809762AFC2976000338BA /* ContentView.swift */; };
@@ -56,6 +60,10 @@
 		841EC41A2B44BB4C00435384 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		841EC41C2B44BBC600435384 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		84511C1A2B5FC599005165D8 /* AnswerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStatus.swift; sourceTree = "<group>"; };
+		84511C1E2B613A1F005165D8 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		84511C202B613A41005165D8 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		84511C222B613C9D005165D8 /* LearningCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCase.swift; sourceTree = "<group>"; };
+		84511C242B62B4E0005165D8 /* WordWithAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordWithAnswers.swift; sourceTree = "<group>"; };
 		846521292B5DBBE400EE2303 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		848809712AFC2976000338BA /* WordCapsule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordCapsule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848809742AFC2976000338BA /* WordCapsuleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCapsuleApp.swift; sourceTree = "<group>"; };
@@ -200,6 +208,10 @@
 				84908FB42B5C34E900B7D7EE /* WordModel.swift */,
 				846521292B5DBBE400EE2303 /* Player.swift */,
 				84511C1A2B5FC599005165D8 /* AnswerStatus.swift */,
+				84511C1E2B613A1F005165D8 /* Word.swift */,
+				84511C242B62B4E0005165D8 /* WordWithAnswers.swift */,
+				84511C222B613C9D005165D8 /* LearningCase.swift */,
+				84511C202B613A41005165D8 /* Level.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +297,7 @@
 				841EC41B2B44BB4C00435384 /* String+Ext.swift in Sources */,
 				848809772AFC2976000338BA /* ContentView.swift in Sources */,
 				84511C1B2B5FC599005165D8 /* AnswerStatus.swift in Sources */,
+				84511C232B613C9D005165D8 /* LearningCase.swift in Sources */,
 				84908FA92B55690100B7D7EE /* MenuModel.swift in Sources */,
 				0193D9962B00715B006E73BC /* WordReader.swift in Sources */,
 				84908FBD2B5DA16900B7D7EE /* IconButtonView.swift in Sources */,
@@ -293,10 +306,13 @@
 				84908FA62B5567A400B7D7EE /* Array+Ext.swift in Sources */,
 				018E2D492B018B8C00ED308D /* QRCodeView.swift in Sources */,
 				841EC41D2B44BBC700435384 /* UIImage+Ext.swift in Sources */,
+				84511C212B613A41005165D8 /* Level.swift in Sources */,
 				018E2D4F2B0191D900ED308D /* Constants.swift in Sources */,
 				84908FBB2B5D5AA500B7D7EE /* FightView.swift in Sources */,
 				01A309E82B42C27300DDF4D1 /* Color+Ext.swift in Sources */,
 				84908FB52B5C34E900B7D7EE /* WordModel.swift in Sources */,
+				84511C252B62B4E0005165D8 /* WordWithAnswers.swift in Sources */,
+				84511C1F2B613A1F005165D8 /* Word.swift in Sources */,
 				84908FAB2B556B2C00B7D7EE /* MenuStepView.swift in Sources */,
 				848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */,
 				84908FB72B5D41D400B7D7EE /* QuizView.swift in Sources */,

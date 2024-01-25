@@ -78,7 +78,7 @@ struct TrainingView: View {
                                     
                                     if wordModel.currentIndex < wordModel.listCount - 1 {
                                         IconButtonView(iconType: .forward) {
-                                            wordModel.showNextWord()
+                                            wordModel.showNextWord(for: .Training)
                                         }
                                     }
                                 }
