@@ -60,7 +60,6 @@ struct QuizView: View {
                                     ForEach(wordModel.currentWordWithAnswers.answerOptions, id: \.self) { option in
                                         Button {
                                             wordModel.checkAnswer(answer: option)
-                                            wordModel.showNextWord(for: .Quiz)
                                             count = wordModel.duration
                                         } label: {
                                             RoundedRectangle(cornerRadius: 30)
@@ -80,7 +79,7 @@ struct QuizView: View {
                                 HStack {
                                     Spacer()
                                     
-                                    if wordModel.currentIndex < wordModel.listCount - 1 {
+                                    if wordModel.currentIndex < wordModel.listWithAnswerCount - 1 {
                                         IconButtonView(iconType: .forward) {
                                             wordModel.showNextWord(for: .Quiz)
                                             count = wordModel.duration
@@ -107,7 +106,7 @@ struct QuizView: View {
                     Spacer()
                 }.onReceive(timer) { _ in
                     if count <= 1 {
-                        if wordModel.currentIndex < wordModel.listCount - 1 {
+                        if wordModel.currentIndex < wordModel.listWithAnswerCount - 1 {
                             wordModel.showNextWord(for: .Quiz)
                             count = wordModel.duration
                         }

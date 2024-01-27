@@ -29,6 +29,10 @@ final class WordModel: ObservableObject {
         wordList.count
     }
     
+    var listWithAnswerCount: Int {
+        wordsWithAnswers.count
+    }
+    
     var color: Color {
         level.color
     }
@@ -91,10 +95,15 @@ final class WordModel: ObservableObject {
     }
     
     func checkAnswer(answer: String) {
-        if answer.lowercased() == currentWord.mean.lowercased() {
+        if answer.lowercased() == currentWordWithAnswers.word.mean.lowercased() {
             answerStatus = .correct
         } else {
             answerStatus = .incorrect
+        }
+        
+        self.currentIndex = min(self.wordsWithAnswers.count - 1, self.currentIndex + 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            self.answerStatus = .none
         }
     }
     
@@ -108,6 +117,7 @@ final class WordModel: ObservableObject {
             currentIndex = min(wordList.count - 1, currentIndex + 1)
         case .Quiz:
             currentIndex = min(wordsWithAnswers.count - 1, currentIndex + 1)
+            answerStatus = .none
         case .Fight:
             break
         }

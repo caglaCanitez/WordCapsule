@@ -30,7 +30,7 @@ enum AnswerStatus {
         case .incorrect:
             return Text("WRONG!")
         case .none:
-            return Text("")
+            return Text("Please answer.")
         }
     }
 }
