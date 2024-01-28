@@ -26,6 +26,12 @@
 		84511C212B613A41005165D8 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C202B613A41005165D8 /* Level.swift */; };
 		84511C232B613C9D005165D8 /* LearningCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C222B613C9D005165D8 /* LearningCase.swift */; };
 		84511C252B62B4E0005165D8 /* WordWithAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C242B62B4E0005165D8 /* WordWithAnswers.swift */; };
+		84511C272B652053005165D8 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C262B652053005165D8 /* ResultView.swift */; };
+		84511C292B655B9D005165D8 /* AnswerStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C282B655B9D005165D8 /* AnswerStatusView.swift */; };
+		84511C2B2B655C9A005165D8 /* RemaininTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C2A2B655C9A005165D8 /* RemaininTimeView.swift */; };
+		84511C2D2B655D51005165D8 /* RectangleWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C2C2B655D51005165D8 /* RectangleWordView.swift */; };
+		84511C2F2B656BC9005165D8 /* AnswerRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C2E2B656BC9005165D8 /* AnswerRectangleView.swift */; };
+		84511C312B66BA8A005165D8 /* RectangleAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84511C302B66BA8A005165D8 /* RectangleAnswerView.swift */; };
 		8465212A2B5DBBE400EE2303 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846521292B5DBBE400EE2303 /* Player.swift */; };
 		848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809742AFC2976000338BA /* WordCapsuleApp.swift */; };
 		848809772AFC2976000338BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848809762AFC2976000338BA /* ContentView.swift */; };
@@ -64,6 +70,12 @@
 		84511C202B613A41005165D8 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		84511C222B613C9D005165D8 /* LearningCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCase.swift; sourceTree = "<group>"; };
 		84511C242B62B4E0005165D8 /* WordWithAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordWithAnswers.swift; sourceTree = "<group>"; };
+		84511C262B652053005165D8 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		84511C282B655B9D005165D8 /* AnswerStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStatusView.swift; sourceTree = "<group>"; };
+		84511C2A2B655C9A005165D8 /* RemaininTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemaininTimeView.swift; sourceTree = "<group>"; };
+		84511C2C2B655D51005165D8 /* RectangleWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleWordView.swift; sourceTree = "<group>"; };
+		84511C2E2B656BC9005165D8 /* AnswerRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRectangleView.swift; sourceTree = "<group>"; };
+		84511C302B66BA8A005165D8 /* RectangleAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleAnswerView.swift; sourceTree = "<group>"; };
 		846521292B5DBBE400EE2303 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		848809712AFC2976000338BA /* WordCapsule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordCapsule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848809742AFC2976000338BA /* WordCapsuleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCapsuleApp.swift; sourceTree = "<group>"; };
@@ -102,6 +114,11 @@
 				84908FAE2B556CE800B7D7EE /* HomePageTitleView.swift */,
 				84908FB02B556CF800B7D7EE /* HomePageBacgorundView.swift */,
 				84908FBC2B5DA16900B7D7EE /* IconButtonView.swift */,
+				84511C282B655B9D005165D8 /* AnswerStatusView.swift */,
+				84511C2A2B655C9A005165D8 /* RemaininTimeView.swift */,
+				84511C2C2B655D51005165D8 /* RectangleWordView.swift */,
+				84511C2E2B656BC9005165D8 /* AnswerRectangleView.swift */,
+				84511C302B66BA8A005165D8 /* RectangleAnswerView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -113,6 +130,7 @@
 				84908FB82B5D422800B7D7EE /* TrainingView.swift */,
 				84908FB62B5D41D400B7D7EE /* QuizView.swift */,
 				84908FBA2B5D5AA500B7D7EE /* FightView.swift */,
+				84511C262B652053005165D8 /* ResultView.swift */,
 				018E2D4B2B018FC000ED308D /* MatchMakingCodeDemoView.swift */,
 			);
 			path = Screens;
@@ -295,8 +313,11 @@
 				8465212A2B5DBBE400EE2303 /* Player.swift in Sources */,
 				84908FB12B556CF800B7D7EE /* HomePageBacgorundView.swift in Sources */,
 				841EC41B2B44BB4C00435384 /* String+Ext.swift in Sources */,
+				84511C292B655B9D005165D8 /* AnswerStatusView.swift in Sources */,
 				848809772AFC2976000338BA /* ContentView.swift in Sources */,
+				84511C312B66BA8A005165D8 /* RectangleAnswerView.swift in Sources */,
 				84511C1B2B5FC599005165D8 /* AnswerStatus.swift in Sources */,
+				84511C272B652053005165D8 /* ResultView.swift in Sources */,
 				84511C232B613C9D005165D8 /* LearningCase.swift in Sources */,
 				84908FA92B55690100B7D7EE /* MenuModel.swift in Sources */,
 				0193D9962B00715B006E73BC /* WordReader.swift in Sources */,
@@ -310,12 +331,15 @@
 				018E2D4F2B0191D900ED308D /* Constants.swift in Sources */,
 				84908FBB2B5D5AA500B7D7EE /* FightView.swift in Sources */,
 				01A309E82B42C27300DDF4D1 /* Color+Ext.swift in Sources */,
+				84511C2F2B656BC9005165D8 /* AnswerRectangleView.swift in Sources */,
 				84908FB52B5C34E900B7D7EE /* WordModel.swift in Sources */,
 				84511C252B62B4E0005165D8 /* WordWithAnswers.swift in Sources */,
 				84511C1F2B613A1F005165D8 /* Word.swift in Sources */,
 				84908FAB2B556B2C00B7D7EE /* MenuStepView.swift in Sources */,
+				84511C2D2B655D51005165D8 /* RectangleWordView.swift in Sources */,
 				848809752AFC2976000338BA /* WordCapsuleApp.swift in Sources */,
 				84908FB72B5D41D400B7D7EE /* QuizView.swift in Sources */,
+				84511C2B2B655C9A005165D8 /* RemaininTimeView.swift in Sources */,
 				018E2D462B017D2C00ED308D /* MatchMakingCodeGenerator.swift in Sources */,
 				84908FB92B5D422800B7D7EE /* TrainingView.swift in Sources */,
 				84908FAD2B556BE900B7D7EE /* RectangleMenuView.swift in Sources */,

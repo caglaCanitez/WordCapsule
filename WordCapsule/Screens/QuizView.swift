@@ -9,11 +9,12 @@ import SwiftUI
 
 struct QuizView: View {
     @ObservedObject var wordModel: WordModel
+    @State private var navigateToResultView = false
     @State var count: Int
     
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let height = UIScreen.main.bounds.height / 2
     let width = UIScreen.main.bounds.width / 1.3
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
@@ -28,13 +29,7 @@ struct QuizView: View {
                 VStack {
                     Spacer()
                     
-                    Text("REMAINING TIME")
-                        .font(.headline)
-                        .fontWeight(.light)
-                        .foregroundColor(.wordText)
-                    
-                    Text("\(count)")
-                    
+                    RemaininTimeView(count: count)
                     
                     RoundedRectangle(cornerRadius: 30)
                         .fill(wordModel.color)
@@ -43,33 +38,15 @@ struct QuizView: View {
                             VStack {
                                 Spacer()
                                 
-                                RoundedRectangle(cornerRadius: 30)
-                                    .fill(.white)
-                                    .frame(width: width/2, height: height/3)
-                                    .padding()
-                                    .overlay(
-                                        Text(wordModel.currentWordWithAnswers.word.word.capitalized)
-                                            .font(.title)
-                                            .fontWeight(.bold)
-                                            .foregroundColor(wordModel.color)
-                                    )
+                                RectangleWordView(word: wordModel.currentWordWithAnswers.word.word,
+                                                  color: wordModel.color)
                                 
                                 Spacer()
                                 
                                 LazyVGrid(columns: columns, spacing: 10) {
                                     ForEach(wordModel.currentWordWithAnswers.answerOptions, id: \.self) { option in
-                                        Button {
-                                            wordModel.checkAnswer(answer: option)
-                                            count = wordModel.duration
-                                        } label: {
-                                            RoundedRectangle(cornerRadius: 30)
-                                                .foregroundColor(.white)
-                                                .frame(height: 50)
-                                                .padding()
-                                                .overlay {
-                                                    Text(option)
-                                                        .foregroundColor(wordModel.color)
-                                                }
+                                        RectangleAnswerView(option: option, color: wordModel.color) {
+                                            checkAndShowNextAnswer(option: option)
                                         }
                                     }
                                 }
@@ -81,8 +58,7 @@ struct QuizView: View {
                                     
                                     if wordModel.currentIndex < wordModel.listWithAnswerCount - 1 {
                                         IconButtonView(iconType: .forward) {
-                                            wordModel.showNextWord(for: .Quiz)
-                                            count = wordModel.duration
+                                            checkAndShowNextAnswer()
                                         }
                                     }
                                     
@@ -93,28 +69,35 @@ struct QuizView: View {
                         .shadow(radius: 10)
                         .padding()
                     
-                    VStack {
-                        wordModel.answerStatus.iconView
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(wordModel.color)
-                        
-                        wordModel.answerStatus.textView
-                            .foregroundColor(.wordText)
-                    }
+                    AnswerStatusView(answerStatus: wordModel.answerStatus, color: wordModel.color)
                     
                     Spacer()
-                }.onReceive(timer) { _ in
+                    
+                }
+                .onReceive(timer) { _ in
                     if count <= 1 {
-                        if wordModel.currentIndex < wordModel.listWithAnswerCount - 1 {
-                            wordModel.showNextWord(for: .Quiz)
-                            count = wordModel.duration
-                        }
+                        checkAndShowNextAnswer()
                     } else {
                         count -= 1
                     }
                 }
+                .navigationDestination(isPresented: $navigateToResultView) {
+                    ResultView()
+                }
             }
+        }
+    }
+    
+    private func checkAndShowNextAnswer(option: String? = nil) {
+        if let option {
+            wordModel.checkAnswer(answer: option)
+        }
+        
+        if wordModel.currentIndex < wordModel.listWithAnswerCount - 1 {
+            wordModel.showNextWord(for: .Quiz)
+            count = wordModel.duration
+        } else {
+            navigateToResultView = true
         }
     }
 }

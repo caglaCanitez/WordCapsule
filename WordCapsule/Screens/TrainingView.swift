@@ -41,18 +41,10 @@ struct TrainingView: View {
 //                                    }
                                 }
                                 
-                                Spacer ()
+                                Spacer () 
                                 
-                                RoundedRectangle(cornerRadius: 30)
-                                    .fill(.white)
-                                    .frame(width: width/2, height: height/3)
-                                    .padding()
-                                    .overlay(
-                                        Text(wordModel.currentWord.word.capitalized)
-                                            .font(.title)
-                                            .fontWeight(.bold)
-                                            .foregroundColor(wordModel.color)
-                                    )
+                                RectangleWordView(word: wordModel.currentWord.word,
+                                                  color: wordModel.color)
                                 
                                 
                                 Text(wordModel.currentWord.type)

@@ -17,7 +17,7 @@ final class WordModel: ObservableObject {
     
     var currentWord: Word {
         wordList.indices.contains(currentIndex) ? wordList[currentIndex] :
-        Word(word: "No more words", type: "", mean: "")
+        Word(word: "", type: "", mean: "")
     }
     
     var currentWordWithAnswers: WordWithAnswers {
@@ -100,11 +100,6 @@ final class WordModel: ObservableObject {
         } else {
             answerStatus = .incorrect
         }
-        
-        self.currentIndex = min(self.wordsWithAnswers.count - 1, self.currentIndex + 1)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-            self.answerStatus = .none
-        }
     }
     
     func showBackWord() {
@@ -116,8 +111,10 @@ final class WordModel: ObservableObject {
         case .Training:
             currentIndex = min(wordList.count - 1, currentIndex + 1)
         case .Quiz:
-            currentIndex = min(wordsWithAnswers.count - 1, currentIndex + 1)
-            answerStatus = .none
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                self.currentIndex = min(self.wordsWithAnswers.count - 1, self.currentIndex + 1)
+                self.answerStatus = .none
+            }
         case .Fight:
             break
         }
