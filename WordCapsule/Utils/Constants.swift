@@ -11,9 +11,3 @@ import SwiftUI
 struct Constants {
     static let dateFormat = "yyyy/MM/dd HH:mm:ss"
 }
-
-struct Option {
-    let pageTitle: String
-    let stepOptions: [String]
-    let buttonColors: [Color]
-}

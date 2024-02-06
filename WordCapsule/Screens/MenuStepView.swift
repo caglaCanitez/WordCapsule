@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MenuStepView: View {
     @ObservedObject var menuModel: MenuModel
+    @EnvironmentObject var wordModel: WordModel
+    
     var menu: MenuModel.Menu
     var pageTitle: String {
         menu.pageTitle
@@ -59,7 +61,27 @@ struct MenuStepView: View {
                     if let next = menu.next {
                         MenuStepView(menuModel: menuModel, menu: next)
                     } else {
-                        LearnNewWordView()
+                        switch menuModel.choosedItems[.learningCase]?.value as? LearningCase {
+                        case .Training:
+                            if let level = menuModel.choosedItems[.level]?.value as? Level,
+                               let wordCount = menuModel.choosedItems[.wordCount]?.value as? Int {
+                                TrainingView(wordModel: wordModel)
+                                    .onAppear {
+                                        wordModel.fetchWordList(for: level, wordCount: wordCount)
+                                    }
+                            }
+                        case .Quiz:
+                            if let level = menuModel.choosedItems[.level]?.value as? Level,
+                               let wordCount = menuModel.choosedItems[.wordCount]?.value as? Int,
+                               let duration = menuModel.choosedItems[.duration]?.value as? Int {
+                                QuizView(wordModel: wordModel, count: duration)
+                                    .onAppear {
+                                        wordModel.fetchWordListWithAnswers(for: level, wordCount: wordCount, duration: duration)
+                                    }
+                            }
+                        case .Fight, _:
+                            FightView()
+                        }
                     }
                 }
             }
@@ -68,7 +90,7 @@ struct MenuStepView: View {
     
     fileprivate func setChoosedItem(at index: Int) {
         let selectedItem = menuModel.selectedItem(at: index, for: menu)
-
+        
         if menuModel.choosedItems[menu]?.title != "" {
             menu.setMenuDefaultItem(in: &menuModel.choosedItems)
         }

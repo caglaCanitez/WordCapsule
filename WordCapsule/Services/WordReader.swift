@@ -19,11 +19,11 @@ struct WordLevelCount {
     static let C2 = 30
 }
 
-struct Word: Decodable {
-    let word: String
-    let type: String
-    let mean: String
-}
+//struct Word: Decodable {
+//    let word: String
+//    let type: String
+//    let mean: String
+//}
 
 class WordReader {
     
